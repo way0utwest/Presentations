@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Message</h2>
+<p>
+        Welcome to the El-Cheapo Publishing Author Management System.  
+        @if (!Request.IsAuthenticated) {
+            <text>Please log in with your credentials.</text>
+        } else {
+            <text>Thanks for being one of our favorite authors!</text>
+        }
+</p>

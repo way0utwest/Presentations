@@ -1,0 +1,17 @@
+Prepare for Disaster
+
+It's your day off. You've got a ski trip planned for today with your kids. You get a call in a panic as you're about to leave the house. When you arrive at work the Sales Order system is down. Your boss is upset, what do you do?
+
+- The server crashed, and on restart, the LUN that holds your MDF is down.
+- SAN administrators manage to restore the LUN, but the 
+
+You were already logged in and checking the server after an alert from SQL Monitor.
+
+SQL Backup ran a backup last night, before the LUN crashed. If it hadn't, we'd have been notified of the failure. Not only did it run, but it copied the
+
+As you are checking, SQL Backup Pro detects a corruption error and lets you know from the scheduled restores. 
+
+User deleted some data. OK, run Data Compare to find it.
+
+
+

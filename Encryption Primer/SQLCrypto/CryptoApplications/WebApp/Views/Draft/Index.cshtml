@@ -1,0 +1,12 @@
+﻿@model List<DataAccess.Draft>
+@{
+    ViewBag.Title = "Drafts";
+}
+
+<h2>Drafts</h2>
+@Html.ActionLink("Create New","Create") <br />
+<br />
+@foreach (var d in @Model) { 
+    @Html.ActionLink(d.Title, "Crypto", new { id = d.ID }) <br />
+} 
+    

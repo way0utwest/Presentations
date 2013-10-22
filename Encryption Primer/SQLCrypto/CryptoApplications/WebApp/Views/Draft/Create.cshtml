@@ -1,0 +1,12 @@
+﻿@model DataAccess.Draft
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+<form action=Create >
+Encryption Key: <input id="encryptionKey" name="encryptionKey" maxlength="255" /> <br />
+Draft Text: <textarea id="draftext" name="drafttext" rows="30"></textarea><br />
+<input type="submit" id="Create" name="Create" value="Create"  />
+</form>

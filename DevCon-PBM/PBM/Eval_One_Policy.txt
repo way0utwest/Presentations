@@ -1,0 +1,9 @@
+sl "c:\Program Files(86)\Microsoft SQL Server\110\Tools\Policies\DatabaseEngine\1033"
+
+
+Invoke-PolicyEvaluation -Policy "Database Auto Close.xml" -TargetServer "dkrSQL2012" 
+
+
+
+
+Invoke-PolicyEvaluation -Policy "Database Auto Close.xml" -TargetServer "dkrSQL2012" > "c:\Users\Steve\My Documents\result.xml"

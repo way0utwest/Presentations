@@ -1,0 +1,28 @@
+survey dbs v developers
+information persistance story
+it's our fault as DBAs. We are pushing developers away
+We shouldn't do that.
+The solution - Treat code, with cavears.
+- Use existing developing processes. What ones are there.
+- DB in version control
+- automate, automate, automate
+- How many teams you support? Integrate with them.
+Process
+ - define, write it down. Use story of deployments happening often. Get management to buy in.
+ - exceptions are exceptional
+Development Process
+- This is how developers view the process
+Deployment
+- this is the reverse
+
+Demos
+VCS
+ - emphasize multiple ways to use VCS, but use it
+ - add feed to the system.
+ - Make changes to the articles
+ - where is the vcs on disk? I don't have that.
+
+Test
+- 
+
+

@@ -1,0 +1,86 @@
+﻿<Window x:Class="ClientApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="500" Width="700">
+    <Window.Resources>
+        <Style x:Key="RightAlignStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="TextAlignment" Value="Right" />
+        </Style>
+        <Style x:Key="CenterAlignStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="LeftAlignStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="TextAlignment" Value="Left" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <WrapPanel HorizontalAlignment="Center">
+                <TextBox Name="txtSearch" Width="150" Margin="2 5 2 2" Text="238-95-7766"/>
+                <Button Name="btnSearch" Click="btnSearch_Click" Width="150" Margin="2 2 2 2">Lookup</Button>
+            </WrapPanel>
+            <DataGrid Name="grdAuthorDetail" AutoGenerateColumns="false" AllowDrop="False" 
+                      CanUserAddRows="False" CanUserSortColumns="true" DockPanel.Dock="Bottom" Margin="10 10 10 10">
+                <DataGrid.RowBackground>
+                    <LinearGradientBrush EndPoint="-0.136,-0.163" StartPoint="1.291,1.248">
+                        <GradientStop Color="#FFA8A929" Offset="0.004"/>
+                        <GradientStop Color="#FFF7F7ED" Offset="0.991"/>
+                    </LinearGradientBrush>
+                </DataGrid.RowBackground>
+
+                <DataGrid.AlternatingRowBackground>
+                    <LinearGradientBrush EndPoint="-0.136,-0.163" StartPoint="1.291,1.248">
+                        <GradientStop Color="#FF9B9999" Offset="0.013"/>
+                        <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </DataGrid.AlternatingRowBackground>
+
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Header="First Name" Width="Auto"
+                                                           Binding="{Binding au_fname}"
+                                                           ElementStyle="{StaticResource LeftAlignStyle}" 
+                                                           IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Last Name" Width="Auto"
+                                                           Binding="{Binding au_lname}"
+                                                           ElementStyle="{StaticResource LeftAlignStyle}" 
+                                                           IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Address" Width="Auto"
+                                                           Binding="{Binding address}"
+                                                           ElementStyle="{StaticResource LeftAlignStyle}" 
+                                                           IsReadOnly="True"/>
+                    <DataGridTextColumn Header="City" Width="Auto"
+                                                           Binding="{Binding city}"
+                                                           ElementStyle="{StaticResource LeftAlignStyle}" 
+                                                           IsReadOnly="True"/>
+                    <DataGridTextColumn Header="State" Width="Auto"
+                                                           Binding="{Binding state}"
+                                                           ElementStyle="{StaticResource LeftAlignStyle}" 
+                                                           IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Zip" Width="Auto"
+                                                           Binding="{Binding zip}"
+                                                           ElementStyle="{StaticResource LeftAlignStyle}" 
+                                                           IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Phone" Width="Auto"
+                                                           Binding="{Binding phone}"
+                                                           ElementStyle="{StaticResource LeftAlignStyle}" 
+                                                           IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Bat Phone" Width="Auto"
+                                                           Binding="{Binding bat_phone}"
+                                                           ElementStyle="{StaticResource LeftAlignStyle}" 
+                                                           IsReadOnly="True"/>
+                    <DataGridTextColumn Header="SSN" Width="Auto"
+                                                           Binding="{Binding ssn}"
+                                                           ElementStyle="{StaticResource LeftAlignStyle}" 
+                                                           IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Commission" Width="Auto"
+                                                           Binding="{Binding commission}"
+                                                           ElementStyle="{StaticResource RightAlignStyle}" 
+                                                           IsReadOnly="True"/>
+                </DataGrid.Columns>
+
+
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>

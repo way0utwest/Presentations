@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="pubs" Class="pubsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=pubs;User ID=sa" SettingsObjectName="DataAccess.Properties.Settings" SettingsPropertyName="pubsConnectionString1" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.SearchForAuthor" Method="SearchForAuthor">
+    <Parameter Name="ssn" Type="System.String" DbType="VarChar(12)" />
+    <ElementType Name="SearchForAuthorResult">
+      <Column Name="au_fname" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="au_lname" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="zip" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="Char(12) NOT NULL" CanBeNull="false" />
+      <Column Name="bat_phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ssn" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SalesByAuthor" Method="SalesByAuthor">
+    <Parameter Name="au_id" Type="System.String" DbType="VarChar(11)" />
+    <ElementType Name="SalesByAuthorResult">
+      <Column Name="title" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="sold" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetAuthorID" Method="GetAuthorID" IsComposable="true">
+    <Parameter Name="login_name" Type="System.String" DbType="VarChar(255)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.LoginAuthor" Method="LoginAuthor" IsComposable="true">
+    <Parameter Name="username" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="password" Type="System.String" DbType="VarChar(255)" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="dbo.ListAuthors" Method="ListAuthors">
+    <ElementType Name="ListAuthorsResult">
+      <Column Name="au_fname" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="au_lname" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="zip" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="Char(12) NOT NULL" CanBeNull="false" />
+      <Column Name="bat_phone" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ssn" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="commission" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetAuthor" Method="GetAuthor">
+    <Parameter Name="au_id" Type="System.String" DbType="VarChar(11)" />
+    <ElementType Name="GetAuthorResult">
+      <Column Name="au_id" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="au_fname" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="au_lname" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="bat_phone" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ssn" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ListDrafts" Method="ListDrafts">
+    <Parameter Name="au_id" Type="System.String" DbType="VarChar(11)" />
+    <ElementType Name="ListDraftsResult">
+      <Column Name="draft_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

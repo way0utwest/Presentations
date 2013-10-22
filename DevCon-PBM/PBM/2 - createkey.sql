@@ -1,0 +1,34 @@
+USE db1
+GO
+CREATE SYMMETRIC KEY mykey
+ WITH ALGORITHM = AES_128
+ ENCRYPTION BY PASSWORD = '@ReallyStrong0Password45'
+ ;
+ GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- rebuild
+USE db1
+GO
+ DROP  SYMMETRIC KEY mykey
+ ;
+ GO
+CREATE SYMMETRIC KEY mykey
+ WITH ALGORITHM = AES_256
+ ENCRYPTION BY PASSWORD = '@ReallyStrong0Password45'
+ ;
+ GO
+ 

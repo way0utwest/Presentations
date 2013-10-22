@@ -1,0 +1,8 @@
+Getting Control of Your Instances with Policy-Based Management 
+
+Abstract:
+What sounds more productive: 1) managing each of your instances one at a time; or 2) managing all of them in one or more groups? I’m betting you like the latter option better. In this session, you will learn how to use Policy-Based Management to scale your DBA administrative capabilities by grouping your instances together and managing them as one or more groups. This will not only save you administrative time, but it help ensures that your policies and procedures (best practices) are standardized across all of the SQL Server instances throughout your organization. 
+
+
+
+Flow:

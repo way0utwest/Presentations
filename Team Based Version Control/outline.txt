@@ -1,0 +1,73 @@
+Team Based Source Control
+
+Why version control is a good idea
+Ultimate Goal  - reduce risk from changes
+Standards and practices
+
+Set the stage, what does VCS mean for databases?
+
+Do you believe? 
+
+In most jobs you want to be able to rollback if you make a mistake. You can't sometimes, but we often can in software 
+development. In software we aren’t usually working in areas quite this critical, but the lack of having a safety net for your application can be a problem.
+
+Professionals believe in version control
+ - they think it's mandatory for developers
+ - they think it's fairly easy to use
+ - they think it should be ubiquitous
+ - they think it's always makes sense
+
+Your version control, or source control system, should be the last word in what code is included in your application. 
+Source control provides you this central repository that helps everyone be aware of what changes have been made.
+
+Many of the better developers out there, whether working with application code or database code, believe in this process. In terms of databases, the code should be a peer with your application code.
+
+There are a variety of reasons why you should use source control, but
+they all come down to reducing risk. Reducing the risk of problems in your code, conflicts, the chance you cannot build your application to add a feature, apply a patch, or grow your team.
+
+You use source control because nither you nor your team is perfect. 
+
+If you don't like the idea of using a server based system, or your company doens't have one, please use something. If nothing else, back up your code each day.
+
+However we prefer automation. We want to use some sort of tooling to make this process easier. Most IDEs integrate with VCS systems, though SSMS is not one. However there are different ways to do this, as we saw int he demo.
+
+Your code consists of a number of objects. The things we talk about should apply to all of these.
+In terms of standards, we have two types: naming and style.
+
+Naming standards have to do with how we identify things. From servers, to databases, to tables to programming structures, we want consistent naming so all members of the team understand quickly and easily, what they are working with. These can include well known standards (ISO), but they do not have to. The important thing is they are defined, even loosely defined, in your company. You should use tools and automation to enforce them. I would not define everything up front and right away, but define things as needed.
+
+Style standards often vary by individual. Thesse have to do with the formatting and layout of code to enhance readability and understanding. However it doesn't make sense these days to have strict standards for formatting of code. Instead, the IDE should be able to reformat code for the developer as needed. This might include things like spacing, comma placement, etc. Tooling can handle many of these issues. There are a number of add-ins and editors for SQL Server code. Learn to use them.
+
+In team development, we should have a number of rules. The best list I have seen is from K. Scott Allen, with three rules.
+ - Never used a shared database for development
+ - Always have an authoritative source
+ - version your database
+
+All three are important. You don't want a shared database because when testing change and trying out new enhancemnents, especially in database work, you do not want one developer to interfere with others. This is especially problemativ for database work where the structure you are dealing with must be able to work well across time. You always need a source for your database any point in time if you hae to rebuild things. This means you may have create scripts or alter scripts, but whatever combination you have must work to rebuild a database to match a point in time. The last thing is that your database state should be known at different points in time, espeically as you may deploy changes out of order in which they are built. These versions usually correspond to release points, and they are important for building upgrade scripts for altering objects.
+
+The best practices for database development are:
+- Use version control. It's important for a variety of reasons, not the least of which is reducing your risk of problems.
+- Commit often. Better sooner than later.
+- Use tools to help you work better. These can be bespoke or bought, but use them to make things work easier. Your tools should be able to build a database ona new machine quickly and easily. Backup and restore can work, but this isn't always practical.
+- Train your people. Don't assume they know how to use VCS, or they have the habits. It doesn't take long, and it's worth the investment.
+- Build often. This will help you catch mistake and issues early, which means it is less costly in terms of resources to fix things.
+
+The holy grail of all of this is to be able to release at any point in time, if you need to, with confidence. If you have a problem, an urgent request, a deadline, being able to build your applicatin (and database) with confidence, test it quickly, and deploy changes. Continuous Integration, Continuous Deployment, and the automation that goes with them is what w should all shoot for.
+
+
+Teamwork
+Ultimately what we want to do is ensure that everyone in our team, however big or small, works together in a coordinated fashion. We won't all work the same way, but we don't want to create friction and inefficiencies with our differences.
+
+The big things are communication and coordination. Communication betwen members as well as with the application. Knowing when you have code that changes, that works (or doesn't work) and what items people are working on. Coordination has to do with meshing the different ways we all work together.
+
+In terms of communiction, talk to each other (or email, IM, chat, etc.). Don't set very hard and fast rules that are unbreakable, but discuss issues and make reasonable decisions that fit in your environment. If things make sense and help you develop faster and at a higher level of quality, do them. If they don't, then change.
+
+Automation and tooling is definitely the key to good teamwork. The tools should help not only enable, but foster good teamwork. Configure your IDEs to help you. Share knowledge and configuration while allowing diversity in things like personal preferences.
+
+
+Demos
+- Link database to source control, w and w/o SOC
+- Create procedure and test, run tests
+- Make change to object, store in source control. Propogate change to other developer
+- Rollback a change
+

@@ -1,0 +1,23 @@
+Searching Binary Data in SQL Server 2012 
+
+Abstract
+Are you using SQL Server to manage documents stored outside of SQL Server, such as Word or Excel documents using Filestream and Filetable (new in SQL Server 2012)? If so, then this session will teach you how to use the Full-Text Indexing service to be able to retrieve all of this hidden information for easy access by your application, similar to how a search engine works. This session is introductory and will provide you the overall picture of how to implement binary search in SQL Server 2012. 
+
+Flow
+Show filestream
+Show filetable
+Show full text search of filetable (similar demo)
+Show semantic search
+
+
+Setup:
+ - Explorer
+   - D:\x64\Setup
+   - C:\Program Files\Microsoft Semantic Language Database
+
+Demos:
+1 - list demo, types of data
+2 - searching varchar data
+3 - load ifilter, search for filetable data
+4 - property lists?
+5 - semantic search
